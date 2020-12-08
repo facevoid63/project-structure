@@ -4,9 +4,11 @@ const header = [
     title: 'Фото',
     sortable: false,
     template: data => {
+      const url = (data[0]) ? data[0].url : '';
+
       return `
           <div class="sortable-table__cell">
-            <img class="sortable-table-image" alt="Image" src="${data[0].url}">
+            <img class="sortable-table-image" alt="Image" src="${url}">
           </div>
         `;
     }
@@ -21,9 +23,7 @@ const header = [
     id: 'subcategory',
     title: 'Категория',
     sortable: false,
-    template: data => {
-      return `<div class="sortable-table__cell">${data.title}</div>`;
-    }
+    template: data => `<div class="sortable-table__cell">${data.title}</div>`,
   },
   {
     id: 'quantity',
