@@ -65,6 +65,7 @@ export default class Page {
   initComponents() {
     this.components.sortableTable = new SortableTable(header, {
       url: `/api/rest/products?_embed=subcategory.category&_sort=title&_order=asc&_start=0&_end=30`,
+      linkPattern: (data) => `/products/${data.id}`,
     });
   }
 

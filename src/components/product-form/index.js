@@ -35,7 +35,7 @@ export default class ProductForm {
       formData.append('image', file);
 
       const response = await fetch(
-        process.env.IMGUR_API_URL,
+        'https://api.imgur.com/3/image',
         {
           method: 'POST',
           headers: {
